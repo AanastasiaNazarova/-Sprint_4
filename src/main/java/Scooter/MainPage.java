@@ -11,6 +11,8 @@ public class MainPage extends BasePage  {
 
     private final By buttonOrded  = By.className("Button_Button__ra12g");
 
+    private final By buttonLogotypeScooter = By.className("Header_LogoScooter__3lsAR");
+    private final By buttonLogotypeYandex = By.className("Header_LogoYandex__3TSOI");
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -39,5 +41,18 @@ public class MainPage extends BasePage  {
         driver.findElement(buttonOrded).click();
         return  new OrderFillFormPersonalDataPage(driver);
 
+    }
+
+    public void clickLogotype(String logotypeName){
+        if(logotypeName.equals("Scooter")){
+            driver.findElement(buttonLogotypeScooter).click();
+        } else if (logotypeName.equals("Yandex")) {
+            driver.findElement(buttonLogotypeYandex).click();
+        }
+
+    }
+
+    public String getCurrentUrl(){
+        return driver.getCurrentUrl();
     }
 }

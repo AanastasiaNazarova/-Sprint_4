@@ -15,22 +15,31 @@ public class PopupMenuRentPeriod extends BasePage{
     public PopupMenuRentPeriod(WebDriver driver) {
         super(driver);
     }
-    protected RentPage selectRentPeriodInPopupMenu(String periodInDay){
-        if(periodInDay.equals("сутки")){
-            driver.findElement(selectOneDayNight).click();
-        } else if (periodInDay.equals("двое суток")) {
-            driver.findElement(selectTwoDayNight).click();
-        }else if (periodInDay.equals("трое суток")) {
-            driver.findElement(selectThreeDayNight).click();
-        } else if (periodInDay.equals("четверо суток")) {
-            driver.findElement(selectFourDayNight).click();
-        }else if (periodInDay.equals("пятеро суток")) {
-            driver.findElement(selectFiveDayNight).click();
-        } else if (periodInDay.equals("шестеро суток")) {
-            driver.findElement(selectSixDayNight).click();
-        }else if (periodInDay.equals("семеро суток")) {
-            driver.findElement(selectSevenDayNight).click();
+    protected RentPage selectRentPeriodInPopupMenu(int periodInDay){
+        switch (periodInDay){
+            case 1:
+                driver.findElement(selectOneDayNight).click();
+                break;
+            case 2:
+                driver.findElement(selectTwoDayNight).click();
+                break;
+            case 3:
+                driver.findElement(selectThreeDayNight).click();
+                break;
+            case 4:
+                driver.findElement(selectFourDayNight).click();
+                break;
+            case 5:
+                driver.findElement(selectFiveDayNight).click();
+                break;
+            case 6:
+                driver.findElement(selectSixDayNight).click();
+                break;
+            case 7:
+                driver.findElement(selectSevenDayNight).click();
+                break;
         }
+
         return new RentPage(driver);
     }
 }

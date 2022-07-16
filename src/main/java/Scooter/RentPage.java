@@ -9,7 +9,6 @@ public class RentPage extends BasePage{
     private String colour;
     private final By setWhen= By.xpath(".//input[@placeholder = '* Когда привезти самокат']");
     private final By RentalPeriodDropdownMenu= By.className("Dropdown-placeholder");
-    //private final By setRentalPeriod= By.class("Dropdown-placeholder");
 
     private final By setColourBlack= By.className("Checkbox_Input__14A2w");
     private final By setColourGrey= By.className("Checkbox_Label__3wxSf");
@@ -23,11 +22,11 @@ public class RentPage extends BasePage{
         driver.findElement(setWhen).sendKeys(data+ Keys.ENTER);
         return this;
     }
-    public RentPage setRenalPeriod (String RentalPeriod){
+    public RentPage setRenalPeriod (int renalPeriod){
         driver.findElement(RentalPeriodDropdownMenu).click();
 
         PopupMenuRentPeriod PopupMenuRentPeriod = new PopupMenuRentPeriod(driver);
-        PopupMenuRentPeriod.selectRentPeriodInPopupMenu(RentalPeriod);
+        PopupMenuRentPeriod.selectRentPeriodInPopupMenu(renalPeriod);
 
         //driver.findElement(setRentalPeriod).click();
         return this;

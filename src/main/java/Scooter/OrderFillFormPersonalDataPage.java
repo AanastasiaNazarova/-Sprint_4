@@ -28,18 +28,18 @@ public class OrderFillFormPersonalDataPage extends BasePage {
         driver.findElement(fillSurname).sendKeys(surname);
         return this;
     }
-    public OrderFillFormPersonalDataPage fillAddress(String Address){
-        driver.findElement(fillAddress).sendKeys(Address);
+    public OrderFillFormPersonalDataPage fillAddress(String address){
+        driver.findElement(fillAddress).sendKeys(address);
         return this;
     }
-    public OrderFillFormPersonalDataPage fillStationMetro(String StationMetro){
+    public OrderFillFormPersonalDataPage fillStationMetro(String stationMetro){
         driver.findElement(metroStationList).click();
-        driver.findElement(fillStationMetro).sendKeys(StationMetro + Keys.ARROW_DOWN + Keys.ENTER);
+        driver.findElement(fillStationMetro).sendKeys(stationMetro + Keys.ARROW_DOWN + Keys.ENTER);
         return this;
 
     }
-    public OrderFillFormPersonalDataPage fillPhoneNumber(String PhoneNumber){
-        driver.findElement(fillPhoneNumber).sendKeys(PhoneNumber);
+    public OrderFillFormPersonalDataPage fillPhoneNumber(String phoneNumber){
+        driver.findElement(fillPhoneNumber).sendKeys(phoneNumber);
         return this;
     }
 
